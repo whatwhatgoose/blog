@@ -1,0 +1,48 @@
+This is a searching problem, we are searching for something in an array
+
+But the array has to be sorted, otherwise we can't do binary search
+
+
+When we have an array and we are looking for something in that array
+we can go through each item in that array to find what we are looking for,
+but the worst case is to go through each item in that array.
+So it would take us O(n), n being the size of the array.
+
+But if the array is sorted, we can search the array faster. 
+The way we do it is by dividing the array in half. 
+We disregard the half that we don't need, and use the half that we need.
+We just keep going through this proccess until we find what we are looking for.
+
+
+
+We need three variables, let's call them 
+left - the left side of the array we are exploring
+right - the right side of the array we are exploring
+mid - used to find the middle element of the array and compare it with what we are looking for
+
+These three variable are markers to know
+which areas of the array we are exploring
+
+
+const myArrayToSearch =  [3,6,7,12,42]
+const numberToFind = 7
+
+
+let left = 0
+let right = myArrayToSearch.length - 1 
+
+while (left <= right) {
+    let middle = Math.floor((l+r)/2)
+    if (array[middle] == target) {
+      console.log("found the value")
+      break
+    }
+    
+    if (myArrayToSearch[middle] < target) {
+        left = middle + 1
+    } else {
+        right = middle - 1
+    }
+}
+console.log("did not find")
+
